@@ -7,9 +7,10 @@
 
 import Foundation
 
+public
 struct MultiPart {
 	
-	struct Part {
+	public struct Part {
 		
 		let name: String
 		let data: Data
@@ -17,9 +18,9 @@ struct MultiPart {
 		var filename: String?
 		
 	}
-	let parts: [Part]
+	public let parts: [Part]
 	
-	func build() ->(contentType:String, body:Data) {
+	public func build() ->(contentType:String, body:Data) {
 		
 		var buffer = [UInt8](repeating: 0, count: 20)
 		arc4random_buf(&buffer, 20)
@@ -51,13 +52,13 @@ struct MultiPart {
 }
 extension MultiPart {
 	
-	init(parts: Part...) { self.init(parts:parts) }
+	public init(parts: Part...) { self.init(parts:parts) }
 	
 }
 
 extension MultiPart.Part {
 	
-	static func string(
+	public static func string(
 		_ string: String,
 		named name:String
 	) ->MultiPart.Part {
@@ -66,7 +67,7 @@ extension MultiPart.Part {
 	
 	}
 	
-	static func data(
+	public static func data(
 		_ data: Data,
 		named name:String
 	) ->MultiPart.Part {
