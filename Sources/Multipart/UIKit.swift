@@ -10,7 +10,7 @@ import UIKit
 
 extension MultiPart.Part {
 
-	static func png(
+	public static func png(
 		_ image: UIImage,
 		named name:String,
 		filename: String? = nil
@@ -21,7 +21,7 @@ extension MultiPart.Part {
 		
 	}
 	
-	static func jpg(
+	public static func jpg(
 		_ image: UIImage,
 		compression:CGFloat = 1.0,
 		named name:String,
