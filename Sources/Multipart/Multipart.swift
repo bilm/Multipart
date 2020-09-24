@@ -61,20 +61,22 @@ extension MultiPart.Part {
 	public static func string(
 		_ string: String,
 		named name:String,
+		mime: String = "text/plain",
 		filename: String? = nil
 	) ->MultiPart.Part {
 		
-		return .init(name: name, data: Data(string.utf8), mime: "text/plain", filename: filename)
+		return .init(name: name, data: Data(string.utf8), mime: mime, filename: filename)
 	
 	}
 	
 	public static func data(
 		_ data: Data,
 		named name:String,
+		mime: String = "application/octet-stream",
 		filename: String? = nil
 	) ->MultiPart.Part {
 		
-		return .init(name: name, data: data, mime: "octet-stream", filename: filename)
+		return .init(name: name, data: data, mime: mime, filename: filename)
 		
 	}
 }
