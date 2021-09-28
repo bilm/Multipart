@@ -19,6 +19,8 @@ struct MultiPart {
 		
 	}
 	public let parts: [Part]
+	public init(parts: [Part]) { self.parts = parts }
+
 	
 	public func build() ->(contentType:String, body:Data) {
 		
